@@ -1,127 +1,110 @@
 # ML-DM-II---labwork1
-📊 Exploratory Data Analysis & PCA Visualization
-📌 Project Overview
+# 📊 Exploratory Data Analysis & PCA Visualization
+
+## 📌 Project Overview
 This project performs data preprocessing, statistical analysis, correlation analysis, and Principal Component Analysis (PCA) on two real-world datasets:
-    - Exam Score Prediction Dataset
-    - Wine Quality Dataset
+* **Exam Score Prediction Dataset**
+* **Wine Quality Dataset**
+
+**The goal is to:**
+* Clean and preprocess data
+* Analyze statistical properties (mean & variance)
+* Visualize feature correlations
+* Reduce dimensionality using PCA
+* Visualize data structure in 2D using principal components
 
 
-The goal is to:
-    + Clean and preprocess data
-    + Analyze statistical properties (mean & variance)
-    + Visualize feature correlations
-    + Reduce dimensionality using PCA
-    + Visualize data structure in 2D using principal components
 
-
-
-📁 Project Structure
+## 📁 Project Structure
+```text
 📂 Project Folder
 │
-├── plot.py                     # Main analysis & visualization script
+├── plot.py                 # Main analysis & visualization script
 ├── Exam_Score_Prediction.csv   # Student exam score dataset
 ├── Wine_Quality.csv            # Wine quality dataset
 └── README.md                   # Project documentation
 
 
-📊 Datasets Description
-1️⃣ Exam Score Prediction Dataset
+## 🔍 Datasets Description
+
+### 1️⃣ Exam Score Prediction Dataset
 This dataset contains student-related features used to analyze factors influencing exam performance.
-    - Preprocessing steps applied:
-    - Removed non-informative column (student_id)
-    - Encoded categorical variables
-    - Statistical analysis (mean & variance)
-    - Correlation matrix visualization
-    - PCA-based dimensionality reduction
-    - Target variable:
-    - exam_score
 
+* **Preprocessing:** Removed `student_id`, encoded categorical variables.
+* **Analysis:** Mean/Variance, Correlation Matrices, PCA.
+* **Target:** `exam_score`
 
-
-2️⃣ Wine Quality Dataset
+### 2️⃣ Wine Quality Dataset
 This dataset contains physicochemical properties of wine samples.
-Preprocessing steps applied:
-    - Removed missing values
-    - Encoded categorical variables (if any)
-    - Statistical analysis (mean & variance)
-    - Correlation matrix visualization
-    - PCA-based dimensionality reduction
-    - Target variable:
-    - quality
+
+* **Preprocessing:** Removed missing values, encoded categories.
+* **Analysis:** PCA-based dimensionality reduction.
+* **Target:** `quality`
 
 
-
-⚙️ Technologies & Libraries Used
-    - Python 3
-    - Pandas – data manipulation
-    - NumPy – numerical computation
-    - Matplotlib – data visualization
-    - Seaborn – correlation heatmaps
-    - Scikit-learn
-    - StandardScaler
-    - LabelEncoder
-    - PCA
+## ⚙️ Technologies & Libraries
+* **Python 3**
+* **Pandas** (Data manipulation)
+* **NumPy** (Numerical computation)
+* **Matplotlib & Seaborn** (Visualization)
+* **Scikit-learn** (StandardScaler, LabelEncoder, PCA)
 
 
+## ▶️ How to Run the Project
 
-
-
-🔍 Analysis Workflow
-The analysis is automated using a reusable function:
-🔹 Data Processing
-    Encode categorical features using LabelEncoder
-    Standardize numerical features using StandardScaler
-
-🔹 Statistical Analysis
-    Compute mean and variance for all features
-
-🔹 Correlation Analysis
-    Generate correlation matrices
-    Visualize using heatmaps
-
-🔹 Principal Component Analysis (PCA)
-    Compute explained variance
-    Generate scree plots
-    Reduce data to 2 principal components
-    Visualize data distribution using color-coded scatter plots
-
-
-
-▶️ How to Run the Project
-1️⃣ Install Dependencies
+### 1. Install Dependencies
+```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
 
-2️⃣ Run the Script
+### 2. Run the script:
+```bash
 python plot.py
 
-The script will:
-Print statistical results to the console
-Display correlation heatmaps
-Show PCA explained variance plots
-Visualize 2D PCA projections for both datasets
+## 🔍 Analysis Workflow
+The analysis is automated using a reusable function `preprocess_and_analyze()` which follows these steps:
+
+### 🔹 1. Data Processing
+* **Encoding:** Categorical features are converted to numeric using `LabelEncoder`.
+* **Standardization:** Numerical features are scaled using `StandardScaler` to ensure PCA isn't biased by different units.
+
+### 🔹 2. Statistical Analysis
+* Automatically computes the **Mean** and **Variance** for every feature in the dataset to understand data distribution.
+
+### 🔹 3. Correlation Analysis
+* Generates a **Correlation Matrix** to identify relationships between variables.
+* Visualizes these relationships using **Seaborn Heatmaps**.
+
+### 🔹 4. Principal Component Analysis (PCA)
+* **Explained Variance:** Calculates how much information each component holds.
+* **Scree Plots:** Visualizes the cumulative variance to determine the optimal number of components.
+* **Dimensionality Reduction:** Compresses the data into **2 Principal Components**.
+* **Visualization:** Generates a 2D scatter plot color-coded by the target variable (`exam_score` or `quality`).
 
 
 
-📈 Output Visualizations
-Correlation heatmaps for each dataset
-Scree plots showing cumulative explained variance
-2D PCA scatter plots colored by target labels
+## 🚀 Script Capabilities
+The script is designed to automate the following tasks:
+- [x] **Statistical Reporting:** Prints mean and variance results directly to the console.
+- [x] **Correlation Mapping:** Displays interactive heatmaps for feature relationship analysis.
+- [x] **Variance Analysis:** Shows PCA explained variance plots (Scree plots).
+- [x] **Dimensionality Visualization:** Generates 2D PCA projections for both datasets.
+
+## 📈 Output Visualizations
+The analysis produces three primary visual insights:
+1. **Correlation Heatmaps:** Identifies how strongly features relate to the target labels.
+2. **Scree Plots:** Shows the cumulative explained variance to justify dimensionality reduction.
+3. **2D PCA Scatter Plots:** Clusters data points by target labels (`exam_score` and `quality`) to reveal underlying structures.
+
+[Image of Correlation Heatmap vs PCA Scree Plot vs PCA Scatter Plot]
 
 
+## 🎯 Learning Outcomes
+By completing this analysis, the following core data science skills were applied:
+* **Feature Engineering:** Understanding relationships through correlation.
+* **Dimensionality Reduction:** Applying PCA to simplify high-dimensional data.
+* **Data Visualization:** Communicating complex mathematical transformations effectively.
+* **Software Design:** Building a reusable and automated data analysis pipeline.
 
-🎯 Learning Outcomes
-Understand feature relationships through correlation analysis
-Apply PCA for dimensionality reduction
-Visualize high-dimensional data effectively
-Practice reusable data analysis pipelines
 
-
-
-👤 Author
-Ánh Dương
-
-If you want, I can also:
-Add screenshots section
-Write a GitHub-ready version
-Simplify it for course submission
-Add theoretical explanation of PCA
+## 👤 Author
+**Ánh Dương**
