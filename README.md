@@ -23,7 +23,7 @@ This project performs data preprocessing, statistical analysis, correlation anal
 ├── Exam_Score_Prediction.csv   # Student exam score dataset
 ├── Wine_Quality.csv            # Wine quality dataset
 └── README.md                   # Project documentation
-
+```
 
 ## 🔍 Datasets Description
 
@@ -55,11 +55,11 @@ This dataset contains physicochemical properties of wine samples.
 ### 1. Install Dependencies
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
-
+```
 ### 2. Run the script:
 ```bash
 python plot.py
-
+```
 ## 🔍 Analysis Workflow
 The analysis is automated using a reusable function `preprocess_and_analyze()` which follows these steps:
 
